@@ -23,7 +23,9 @@ $catProducts = $_SESSION['catProducts'];
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-
+    <div class="cart">
+    <form type="cart" a href="core/cart.php">Корзинка с Котятами</form>
+    </div>
     <div class="container">
         <?php foreach ($catProducts as $product): ?>
         <div class="card">
@@ -34,10 +36,12 @@ $catProducts = $_SESSION['catProducts'];
             Цена: <?php echo $product['price']; ?>$<br>
             Количество: <?php echo $product['quantity']; ?><br>
             <img class="product-image" src="<?php echo $product['image']; ?>" title=" <?php echo $product['description']; ?>"><br>
-            <input type="submit" value="Купить"><br>
+            <form action="core/addToCart.php" method="post">
+                <input type="hidden" name="productId" value="<php return $product['id']; ?>">
+                <input type="submit" value="Добавить в корзину"><br>
+            </form>
         </div>
         <?php endforeach; ?>
     </div>
 </body>
 </html>
-<?php //session_unset() ?>
