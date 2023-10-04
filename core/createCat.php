@@ -22,6 +22,7 @@ for ($i = 0; $i < count($catCount); $i++) {
     $catCount[$i]->setImage($imagePath);
 }
 
+
 //echo '<pre>';
 //print_r($catCount);
 //echo '</pre>';

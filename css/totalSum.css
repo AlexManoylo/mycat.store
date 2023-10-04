@@ -1,0 +1,30 @@
+.totalCartSum {
+    position: absolute;
+    width: 450px;
+    height: 80px;
+    border: 1px solid green;
+    border-radius: 1px;
+    background-color: #dff7df;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+}
+
+.cartSum {
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    }
+
+.checkout {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+

@@ -1,16 +1,15 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(5,  1fr);
-    margin-left: 15%;
-    margin-top: 10%;
-    margin-right: 15%;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-right: 5%;
     grid-auto-rows: 350px;
     grid-gap: 20px;
 }
 
 
-
-.card{
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,8 +24,47 @@
     height: 150px;
 }
 
-.name{
+.name {
     size: 18px;
 }
 
+.card-link {
+    text-decoration: none;
+    color: black;
+
+}
+
+.card-link:hover{
+    text-decoration: underline;
+}
+
+.buttonReload {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    padding: 1px;
+    background-color: #252225;
+
+}
+
+.buttonReload button {
+    background-color: #252225;
+    height: 30px;
+    color: rgba(194, 171, 171, 0.82);
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.buttonReload img {
+    width: 30px;
+    height: auto;
+}
+
+.cart {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+}
 
