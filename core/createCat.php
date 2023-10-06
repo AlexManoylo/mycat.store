@@ -14,7 +14,7 @@ for ($i = 0; $i < count($catName); $i ++) {
         $catDescription[$i],
         rand(100, 1000) / 100,
         rand(1, 10),
-        'images/' . $i+1 . '.jpg'
+        'images/' . ($i+1)  . '.jpg'
     );
 }
 

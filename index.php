@@ -2,13 +2,14 @@
 
 session_start();
 
-if (!isset($_SESSION['catProducts'])) {
-    include 'core/сatArrayConverter.php';
-    $_SESSION['catProducts'] = $catProducts;
+if (!isset($_SESSION['cat'])) {
+    include 'core/createCat.php';
+    $_SESSION['cat'] = $cat;
 }
-include 'core/сatArrayConverter.php';
+//include 'core/сatArrayConverter.php';
 include_once 'core/reloadSite.php';
-$catProducts = $_SESSION['catProducts'];
+$cat = $_SESSION['cat'];
+
 
 
 ?>
@@ -40,26 +41,26 @@ $catProducts = $_SESSION['catProducts'];
 
 <!--Формирование списка товаров-->
 <div class="container">
-    <?php foreach ($catProducts as $product): ?>
+    <?php foreach ($cat as $product): ?>
             <div class="card">
-                <a href="core/catCard.php?id=<?php echo $product['id']; ?>" class="card-link">
+                <a href="core/catCard.php?id=<?php echo $product->getId(); ?>" class="card-link">
 <!--            ID: --><?php //echo $product['id']; ?><!--<br>-->
-            <h4><div class="name"><?php echo $product['name']; ?></div></h4>
-            Возраст: <?php echo $product['age']; ?><br><br>
+            <h4><div class="name"><?php echo $product->getName(); ?></div></h4>
+            Возраст: <?php echo $product->getAge(); ?><br><br>
             <!--            Описание:  <br>-->
-            Цена: <?php echo $product['price']; ?>$<br><br>
+            Цена: <?php echo $product->getPrice(); ?>$<br><br>
 <!--            Количество: --><?php //echo $product['quantity'] ?><!--<br>-->
-            <img class="product-image" src="<?php echo $product['image']; ?>
-            "title=" <?php echo $product['description']; ?>"><br>
+            <img class="product-image" src="<?php echo $product->getImage(); ?>
+            "title=" <?php echo $product->getDescription(); ?>"><br>
                 </a>
                 <form action="core/addToCart.php" method="post">
-                <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
-                <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
-                <input type="hidden" name="age" value="<?php echo $product['age']; ?>">
-                <input type="hidden" name="description" value="<?php echo $product['description']; ?>">
-                <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                <input type="hidden" name="productId" value="<?php echo $product->getId(); ?>">
+                <input type="hidden" name="name" value="<?php echo $product->getName(); ?>">
+                <input type="hidden" name="age" value="<?php echo $product->getAge(); ?>">
+                <input type="hidden" name="description" value="<?php echo $product->getDescription(); ?>">
+                <input type="hidden" name="price" value="<?php echo $product->getPrice(); ?>">
                 <input type="hidden" name="quantity" value="1">
-                <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
+                <input type="hidden" name="image" value="<?php echo $product->getImage(); ?>">
                 <input type="submit" value="Добавить в корзину"><br> </form>
         </div>
     <?php
