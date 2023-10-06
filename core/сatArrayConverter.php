@@ -3,15 +3,15 @@
 session_start();
 include_once 'createCat.php';
 
-foreach ($catCount as $cat) {
-    $catProducts[$cat->getId()] = [
-        'id' => $cat->getId(),
-        'name' => $cat->getName(),
-        'age' => $cat->getAge(),
-        'description' => $cat->getDescription(),
-        'price' => $cat->getPrice(),
-        'quantity' => $cat->getQuantity(),
-        'image' => $cat->getImage(),
+foreach ($cat as $cats) {
+    $catProducts[$cats->getId()] = [
+        'id' => $cats->getId(),
+        'name' => $cats->getName(),
+        'age' => $cats->getAge(),
+        'description' => $cats->getDescription(),
+        'price' => $cats->getPrice(),
+        'quantity' => $cats->getQuantity(),
+        'image' => $cats->getImage(),
     ];
 }
 

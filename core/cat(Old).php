@@ -10,14 +10,39 @@ class Cat
     private $quantity;
     private $image;
 
-    public function __construct($id, $name, $age, $description, $price, $quantity, $image)
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setId($id)
     {
         $this->id = $id;
-        $this->name = $name;
+    }
+
+    public function setAge($age)
+    {
         $this->age = $age;
+    }
+
+    public function setDescription($description)
+    {
         $this->description = $description;
+    }
+
+    public function setPrice($price)
+    {
         $this->price = $price;
+    }
+
+    public function setQuantity($quantity)
+    {
         $this->quantity = $quantity;
+    }
+
+    public function setImage($image)
+    {
         $this->image = $image;
     }
 
@@ -55,5 +80,4 @@ class Cat
     {
         return $this->image;
     }
-
 }
